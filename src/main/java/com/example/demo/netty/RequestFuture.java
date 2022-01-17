@@ -1,10 +1,9 @@
 package com.example.demo.netty;
 
-import lombok.Data;
-
-import javax.servlet.RequestDispatcher;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import lombok.Data;
 
 @Data
 public class RequestFuture {
@@ -14,6 +13,7 @@ public class RequestFuture {
     private Object request;
     private Object result;
     private long timeout=5000;
+    private String path;
 
     public static void addFuture(RequestFuture future){
         futures.put(future.getId(),future);
